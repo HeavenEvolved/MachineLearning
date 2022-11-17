@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="../static/styles/main.css" type="text/css">
+
+<div class="nav"><p>Hello this is my Titanic Competition(<a href="https://www.kaggle.com/competitions/titanic" target="_blank">kaggle.com</a>) ML Model!</p></div>
+
+<form method="POST">
+
+    <label>Passenger Class: </label>
+    <select id="pclass" name="pclass" size="1" required>
+
+        <option value="1">First Class</option>
+        <option value="2">Second Class</option>
+        <option value="3">Third Class</option>
+
+    </select>
+
+    <label>Age: </label>
+    <input type="number" min="0" name="age" required/>
+
+    <label>Fare: </label>
+    <input type="number" min="0" name="fare" required/>
+
+    <label>Gender: </label>
+    <select id="gender" name="sex" size="1" required>
+
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+
+    </select>
+
+    <label>Embarked At: </label>
+    <select id="embarked" name="embarked" size="1" required>
+
+        <option value="1">Cherbourg</option>
+        <option value="2">Queenstown</option>
+        <option value="3">Southampton</option>
+
+    </select>
+
+    <label>Number of Relatives Onboard: </label>
+    <input type="number" min="0" name="relatives" required/>
+
+    <input class="submit" type="submit" />
+    
+</form>
+
+<div name="pred" class="output">
+    
+    <p>{{ pred_str|safe }}</p>
+
+    {% for table in data %}
+        {{ table|safe }}
+    {% endfor %}
+
+</div>
